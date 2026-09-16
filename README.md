@@ -1,7 +1,7 @@
-# 🏡 RoyalNest - Premium Real Estate Platform
+#  RoyalNest - Premium Real Estate Platform
 
 
-## 📌 Overview
+##  Overview
 
 RoyalNest is a modern full-stack real estate platform where users can explore premium properties, view property details, book properties, and manage their accounts.
 
@@ -9,10 +9,10 @@ Admins can manage properties, users, and bookings through a dedicated dashboard.
 
 
 
-## 🚀 Features
+##  Features
 
 
-### 👤 User Features
+###  User Features
 
 - User registration and login
 - JWT authentication
@@ -26,7 +26,7 @@ Admins can manage properties, users, and bookings through a dedicated dashboard.
 
 
 
-### 👑 Admin Features
+###  Admin Features
 
 - Secure admin dashboard
 - Add new properties
