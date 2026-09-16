@@ -40,7 +40,7 @@ Admins can manage properties, users, and bookings through a dedicated dashboard.
 
 
 
-## 🛠️ Technology Stack
+##  Technology Stack
 
 
 ### Frontend
