@@ -1,0 +1,582 @@
+@import "tailwindcss";
+
+
+:root {
+
+  --black:#050505;
+  --black-soft:#0b0b0b;
+
+  --white:#f8f8f8;
+  --gray:#a1a1aa;
+
+  --silver:#d4d4d8;
+
+  --glass:
+  rgba(255,255,255,0.06);
+
+  --glass-border:
+  rgba(255,255,255,0.18);
+
+}
+
+
+
+* {
+
+  box-sizing:border-box;
+
+}
+
+
+
+html {
+
+  scroll-behavior:smooth;
+
+  overflow-x:hidden;
+
+}
+
+
+
+body {
+
+
+  margin:0;
+
+
+  overflow-x:hidden;
+
+
+  background:
+
+  radial-gradient(
+    circle at top,
+    rgba(255,255,255,.08),
+    transparent 35%
+  ),
+
+
+  linear-gradient(
+    135deg,
+    #050505,
+    #0b0b0b
+  );
+
+
+  color:#f8f8f8;
+
+
+  font-family:
+
+  var(--font-body),
+  Inter,
+  sans-serif;
+
+
+
+}
+
+
+
+
+
+
+
+/* Premium Glass */
+
+
+.glass {
+
+
+  background:
+
+  var(--glass);
+
+
+
+  backdrop-filter:
+
+  blur(20px);
+
+
+
+  -webkit-backdrop-filter:
+
+  blur(20px);
+
+
+
+  border:
+
+  1px solid var(--glass-border);
+
+
+
+  box-shadow:
+
+  0 25px 60px rgba(0,0,0,.6);
+
+
+
+}
+
+
+
+
+
+
+
+/* Luxury Typography */
+
+
+.luxury-heading {
+
+
+  font-family:
+
+  var(--font-heading),
+  serif;
+
+
+  letter-spacing:
+
+  -0.02em;
+
+
+}
+
+
+
+
+.body-text {
+
+
+  font-family:
+
+  var(--font-body),
+  sans-serif;
+
+
+  color:#a1a1aa;
+
+
+}
+
+
+
+
+.brand-text {
+
+
+  font-family:
+
+  var(--font-heading),
+  serif;
+
+
+  letter-spacing:.05em;
+
+
+}
+
+
+
+
+
+
+
+
+.luxury-text {
+
+
+  background:
+
+  linear-gradient(
+
+  90deg,
+
+  #ffffff,
+
+  #a1a1aa
+
+  );
+
+
+
+  -webkit-background-clip:text;
+
+
+  color:transparent;
+
+
+}
+
+
+
+
+
+
+
+
+
+/* Premium Button */
+
+
+.premium-button {
+
+
+  background:
+
+  #ffffff;
+
+
+  color:#050505;
+
+
+  font-weight:600;
+
+
+  border-radius:999px;
+
+
+  transition:.35s ease;
+
+
+
+}
+
+
+
+.premium-button:hover {
+
+
+  transform:
+
+  translateY(-3px);
+
+
+
+  background:#d4d4d8;
+
+
+
+  box-shadow:
+
+  0 15px 40px rgba(255,255,255,.15);
+
+
+
+}
+
+
+
+
+
+
+
+
+
+/* Input */
+
+
+.input-style {
+
+
+  width:100%;
+
+
+  background:
+
+  rgba(255,255,255,.05);
+
+
+
+  border:
+
+  1px solid rgba(255,255,255,.15);
+
+
+
+  border-radius:14px;
+
+
+
+  padding:
+
+  14px 18px;
+
+
+
+  color:white;
+
+
+
+  outline:none;
+
+
+
+  transition:.3s;
+
+
+
+}
+
+
+
+.input-style::placeholder {
+
+
+  color:#71717a;
+
+
+}
+
+
+
+
+.input-style:focus {
+
+
+  border-color:white;
+
+
+
+  box-shadow:
+
+  0 0 25px rgba(255,255,255,.15);
+
+
+
+}
+
+
+
+
+
+
+
+
+
+/* Floating Animation */
+
+
+.floating-orb {
+
+
+  position:absolute;
+
+
+  border-radius:50%;
+
+
+  filter:blur(90px);
+
+
+
+  animation:
+
+  float 10s ease-in-out infinite;
+
+
+
+}
+
+
+
+@keyframes float {
+
+
+0%,
+100% {
+
+
+  transform:translateY(0);
+
+
+}
+
+
+
+50% {
+
+
+  transform:translateY(-40px);
+
+
+}
+
+
+
+}
+
+
+
+
+
+
+
+
+
+/* Fade Animation */
+
+
+.fade-up {
+
+
+animation:
+
+fadeUp .8s ease forwards;
+
+
+
+}
+
+
+
+@keyframes fadeUp {
+
+
+from {
+
+
+opacity:0;
+
+
+transform:translateY(30px);
+
+
+
+}
+
+
+
+to {
+
+
+opacity:1;
+
+
+transform:translateY(0);
+
+
+
+}
+
+
+}
+
+
+
+
+
+
+
+
+
+/* Card Hover */
+
+
+.hover-card {
+
+
+transition:.5s ease;
+
+
+
+}
+
+
+
+.hover-card:hover {
+
+
+transform:
+
+translateY(-10px);
+
+
+
+box-shadow:
+
+0 30px 70px rgba(255,255,255,.08);
+
+
+
+}
+
+
+
+
+
+
+
+
+
+/* Image Zoom */
+
+
+.image-hover {
+
+
+overflow:hidden;
+
+
+}
+
+
+
+.image-hover img {
+
+
+transition:
+
+transform .7s ease;
+
+
+
+}
+
+
+
+.image-hover:hover img {
+
+
+transform:
+
+scale(1.08);
+
+
+
+}
+
+
+
+
+
+
+
+
+/* Hide Scrollbar For Sliders */
+
+
+.hide-scrollbar::-webkit-scrollbar {
+
+
+display:none;
+
+
+}
+
+
+
+.hide-scrollbar {
+
+
+-ms-overflow-style:none;
+
+
+scrollbar-width:none;
+
+
+}
