@@ -4,20 +4,17 @@
 import Link from "next/link";
 
 
-
-export default function BackButton({to="/dashboard"}){
+export default function BackButton(){
 
 
 return (
 
 <Link
 
-href={to}
+href="/"
 
 className="
 inline-flex
-items-center
-gap-2
 mb-8
 px-5
 py-2
@@ -32,11 +29,11 @@ transition
 
 >
 
-← Back to Dashboard
+← Back to Home
 
 </Link>
 
-
 )
+
 
 }

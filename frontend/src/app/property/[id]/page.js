@@ -121,7 +121,7 @@ mx-auto
 
 <Link
 
-href="/properties"
+href="/"
 
 className="
 inline-flex
@@ -139,12 +139,9 @@ transition
 
 >
 
-← Back to Properties
+← Back to Home
 
 </Link>
-
-
-
 
 
 

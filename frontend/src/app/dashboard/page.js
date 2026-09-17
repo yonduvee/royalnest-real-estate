@@ -62,16 +62,55 @@ const [favorites,setFavorites]=useState([]);
 useEffect(()=>{
 
 
-const token=localStorage.getItem("token");
+const token = localStorage.getItem("token");
+
+const savedUser = localStorage.getItem("user");
 
 
-const savedUser=localStorage.getItem("user");
+if(!savedUser){
 
+window.location.href="/login";
+
+return;
+
+}
+
+
+
+const currentUser = JSON.parse(savedUser);
+
+
+// Admin should not enter user dashboard
+
+if(currentUser.role==="admin"){
+
+window.location.href="/admin";
+
+return;
+
+}
+
+
+setUser(currentUser);
 
 
 if(savedUser){
 
-setUser(JSON.parse(savedUser));
+const currentUser = JSON.parse(savedUser);
+
+setUser(currentUser);
+
+
+// Prevent admin entering user dashboard
+
+if(currentUser.role==="admin"){
+
+window.location.href="/admin";
+
+return;
+
+}
+
 
 }
 

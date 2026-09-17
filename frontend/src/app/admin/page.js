@@ -50,8 +50,33 @@ const [bookings,setBookings]=useState([]);
 useEffect(()=>{
 
 
-const token =
-localStorage.getItem("token");
+const token = localStorage.getItem("token");
+
+const savedUser = localStorage.getItem("user");
+
+
+if(!savedUser){
+
+window.location.href="/login";
+
+return;
+
+}
+
+
+
+const currentUser = JSON.parse(savedUser);
+
+
+// Only admin allowed
+
+if(currentUser.role!=="admin"){
+
+window.location.href="/dashboard";
+
+return;
+
+}
 
 
 
