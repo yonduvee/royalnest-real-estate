@@ -1,8 +1,7 @@
 import Link from "next/link";
 import BookingModal from "@/components/BookingModal";
+import API_URL from "@/lib/api";
 
-
-const API_URL="http://localhost:5000/api";
 
 
 
@@ -82,7 +81,7 @@ const image = property.images?.length
 
 ?
 
-`http://localhost:5000/uploads/properties/${property.images[0]}`
+`${API_URL.replace("/api","")}/uploads/properties/${property.images[0]}`
 
 :
 

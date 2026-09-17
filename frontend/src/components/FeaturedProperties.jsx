@@ -4,12 +4,14 @@
 import { useEffect, useState } from "react";
 import PropertyCard from "./PropertyCard";
 import API_URL from "@/lib/api";
+
 import {
   Bed,
   Bath,
   Ruler,
   MapPin
 } from "lucide-react";
+
 
 
 
@@ -25,10 +27,8 @@ price:"$850,000",
 bedrooms:4,
 bathrooms:3,
 area:"3200 sqft",
-image:
-"https://images.unsplash.com/photo-1600585154340-be6161a56a0c"
+image:"https://images.unsplash.com/photo-1600585154340-be6161a56a0c"
 },
-
 
 
 {
@@ -39,10 +39,8 @@ price:"$1,800,000",
 bedrooms:6,
 bathrooms:5,
 area:"6000 sqft",
-image:
-"https://images.unsplash.com/photo-1600047509807-ba8f99d2cdde"
+image:"https://images.unsplash.com/photo-1600047509807-ba8f99d2cdde"
 },
-
 
 
 {
@@ -53,10 +51,8 @@ price:"$900,000",
 bedrooms:3,
 bathrooms:2,
 area:"1800 sqft",
-image:
-"https://images.unsplash.com/photo-1600607687939-ce8a6c25118c"
+image:"https://images.unsplash.com/photo-1600607687939-ce8a6c25118c"
 },
-
 
 
 {
@@ -67,12 +63,12 @@ price:"$700,000",
 bedrooms:3,
 bathrooms:3,
 area:"2800 sqft",
-image:
-"https://images.unsplash.com/photo-1600566753086-00f18fb6b3ea"
+image:"https://images.unsplash.com/photo-1600566753086-00f18fb6b3ea"
 }
 
 
 ];
+
 
 
 
@@ -132,7 +128,6 @@ object-cover
 
 
 
-
 <div
 
 className="
@@ -149,7 +144,6 @@ luxury-heading
 text-xl
 sm:text-2xl
 text-white
-line-clamp-2
 "
 
 >
@@ -204,7 +198,6 @@ mt-5
 
 
 
-
 <div
 
 className="
@@ -219,15 +212,7 @@ text-sm
 >
 
 
-<span
-
-className="
-flex
-items-center
-gap-2
-"
-
->
+<span className="flex items-center gap-2">
 
 <Bed size={16}/>
 
@@ -237,15 +222,7 @@ gap-2
 
 
 
-<span
-
-className="
-flex
-items-center
-gap-2
-"
-
->
+<span className="flex items-center gap-2">
 
 <Bath size={16}/>
 
@@ -255,15 +232,7 @@ gap-2
 
 
 
-<span
-
-className="
-flex
-items-center
-gap-2
-"
-
->
+<span className="flex items-center gap-2">
 
 <Ruler size={16}/>
 
@@ -272,7 +241,9 @@ gap-2
 </span>
 
 
+
 </div>
+
 
 
 
@@ -289,7 +260,6 @@ rounded-full
 border
 border-white/20
 text-gray-400
-cursor-not-allowed
 "
 
 >
@@ -300,12 +270,7 @@ Showcase Property
 
 
 
-
-
 </div>
-
-
-
 
 
 </div>
@@ -324,6 +289,7 @@ Showcase Property
 
 
 export default function FeaturedProperties(){
+
 
 
 const [properties,setProperties]=useState([]);
@@ -348,16 +314,52 @@ fetch(`${API_URL}/properties`)
 .then(data=>{
 
 
+console.log("Properties API:",data);
+
+
+
+
+
+if(Array.isArray(data)){
+
+
 setProperties(data);
 
+
+}
+
+else if(Array.isArray(data.properties)){
+
+
+setProperties(data.properties);
+
+
+}
+
+else{
+
+
+setProperties([]);
+
+
+}
+
+
+
 setLoading(false);
+
 
 
 })
 
 
-.catch(()=>{
+.catch(error=>{
 
+
+console.log(error);
+
+
+setProperties([]);
 
 setLoading(false);
 
@@ -365,7 +367,9 @@ setLoading(false);
 });
 
 
+
 },[]);
+
 
 
 
@@ -402,7 +406,6 @@ mx-auto
 
 
 
-{/* Featured */}
 
 
 <div
@@ -428,6 +431,7 @@ text-sm
 FEATURED PROPERTIES
 
 </p>
+
 
 
 
@@ -459,6 +463,7 @@ Explore Luxury Homes
 
 
 
+
 <div
 
 className="
@@ -466,7 +471,6 @@ flex
 gap-6
 overflow-x-auto
 hide-scrollbar
-cursor-grab
 "
 
 >
@@ -474,7 +478,7 @@ cursor-grab
 
 {
 
-showcaseProperties.map((property)=>(
+showcaseProperties.map(property=>(
 
 
 <div
@@ -502,7 +506,6 @@ md:min-w-[360px]
 }
 
 
-
 </div>
 
 
@@ -510,10 +513,6 @@ md:min-w-[360px]
 
 
 
-
-
-
-{/* Latest */}
 
 
 
@@ -588,6 +587,20 @@ Loading properties...
 :
 
 
+properties.length===0 ?
+
+
+<p className="text-gray-400 text-center">
+
+No properties available
+
+</p>
+
+
+
+:
+
+
 <div
 
 className="
@@ -595,7 +608,6 @@ flex
 gap-6
 overflow-x-auto
 hide-scrollbar
-cursor-grab
 "
 
 >
@@ -603,7 +615,7 @@ cursor-grab
 
 {
 
-properties.map((property)=>(
+properties.map(property=>(
 
 
 <div
