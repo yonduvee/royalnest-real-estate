@@ -167,7 +167,10 @@ mx-auto
 "
 
 >
-<BackButton />
+<BackButton
+  href="/dashboard"
+  text="← Back to Dashboard"
+/>
 
 <h1
 

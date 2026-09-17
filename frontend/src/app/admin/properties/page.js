@@ -160,7 +160,10 @@ mx-auto
 
 
 
-<BackButton />
+<BackButton
+  href="/admin"
+  text="← Back to Dashboard"
+/>
 
 
 

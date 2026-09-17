@@ -7,8 +7,6 @@ import { useEffect, useState } from "react";
 
 import {
 Crown,
-Home,
-LogOut,
 UserCircle
 } from "lucide-react";
 
@@ -58,18 +56,7 @@ setUser(JSON.parse(savedUser));
 
 
 
-const logout=()=>{
 
-
-localStorage.removeItem("token");
-
-localStorage.removeItem("user");
-
-
-router.push("/login");
-
-
-};
 
 
 
@@ -343,9 +330,7 @@ hover:text-white
 >
 
 
-<Home size={18}/>
 
-Home
 
 
 </Link>
@@ -357,38 +342,7 @@ Home
 
 
 
-<button
 
-onClick={logout}
-
-className="
-flex
-items-center
-gap-2
-border
-border-red-400
-text-red-400
-rounded-full
-px-5
-py-2
-hover:bg-red-400
-hover:text-black
-transition
-"
-
->
-
-
-<LogOut size={18}/>
-
-<span className="hidden sm:block">
-
-Logout
-
-</span>
-
-
-</button>
 
 
 

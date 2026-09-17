@@ -218,7 +218,11 @@ mx-auto
 
 >
 
-<BackButton />
+<BackButton
+  href="/admin"
+  text="← Back to Dashboard"
+/>
+
 <h1
 
 className="

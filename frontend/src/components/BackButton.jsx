@@ -1,17 +1,19 @@
 "use client";
 
-
 import Link from "next/link";
 
 
-export default function BackButton(){
+export default function BackButton({
+  href="/",
+  text="← Back to Home"
+}){
 
 
 return (
 
 <Link
 
-href="/"
+href={href}
 
 className="
 inline-flex
@@ -29,7 +31,7 @@ transition
 
 >
 
-← Back to Home
+{text}
 
 </Link>
 
